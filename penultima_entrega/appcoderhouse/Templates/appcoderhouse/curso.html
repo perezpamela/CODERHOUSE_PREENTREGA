@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{curso.nombre}}{% endblock title %} 
+{% block main %} 
+
+
+<table class="table table-hover">
+    <tr><td>Curso ID:  {{curso.pk}}</td></tr>
+    <tr><td>Curso camada:  {{curso.camada}}</td></tr>
+    <tr><td>Nombre:  {{curso.nombre}}</td></tr>
+    <tr><td>Descripción:  {{curso.desc}}</td></tr>
+    <tr><td>Agregado:  {{curso.add_date}}</td></tr>
+    <tr><td>Modificado:  {{curso.last_update}}</td></tr>
+    <tr><td><a href="{% url 'UpdateCurso' curso.id %}">Modificar Datos</a></td></tr>
+    <tr><td><a href="{% url 'DeleteCurso' curso.id %}">Eliminar Datos</a></td></tr>
+
+</table>
+
+{% endblock main %}

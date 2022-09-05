@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} Borrar {{obj}} {% endblock title %}
+{% block main %}
+
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        ¿Está seguro de que quiere borrar {{obj}}?
+        <a href='{{request.META.HTTP_REFERER}}' class="btn btn-outline-secondary">Cancelar</a>
+        <input class="btn btn-primary" type="submit" value="Confirmar"/>
+    </form>
+</div>
+
+{% endblock main %}
